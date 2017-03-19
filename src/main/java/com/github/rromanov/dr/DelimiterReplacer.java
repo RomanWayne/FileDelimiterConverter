@@ -11,10 +11,11 @@ import java.util.List;
 import java.util.Objects;
 
 public class DelimiterReplacer {
-    final private List<File> files = new ArrayList<>(); //list of File in source directory
-    final private String destDir; //target folder
+    private final List<File> files; //list of File in source directory
+    private final String destDir; //target folder
 
-    public DelimiterReplacer(String sourceDir, String destDir){
+    public DelimiterReplacer(String sourceDir, String destDir) {
+        this.files = new ArrayList<>();
         this.destDir = destDir;
         File[] folderEntries = new File(sourceDir).listFiles();
         if (Objects.nonNull(folderEntries)){
